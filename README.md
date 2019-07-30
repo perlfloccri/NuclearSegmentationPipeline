@@ -36,3 +36,5 @@ The following three environments have to be set: 1. DataGenerator 2. pix2pix ima
 ```
 pip install -r requirements.txt
 ```
+
+Please dont't forget to [cite](#citing-this-work)!
