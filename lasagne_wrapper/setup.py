@@ -47,9 +47,6 @@ if __name__ == '__main__':
         author='Matthias Dorfer',
         author_email='matthias.dorfer@jku.at',
         license='BSD',
-        #url='https://github.com/scch/wimois',
-        #classifiers=classifiers,
-        #download_url='https://github.com/scch/wimois/releases/download/v%s/wimois-%s.tar.gz' % (version, version),
         packages=find_packages(exclude=['ez_setup']),
         include_package_data=True,
     )
