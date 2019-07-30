@@ -54,4 +54,4 @@ Within the DataGenerator folder, there is the folder dataset_train_val_test cont
 Each of the folders contains a folder images and a folder masks, where raw images and annotations are stored (naming scheme is provided).
 After putting your data there, you can run the batch script on a dos command line.
 At success, the output (predictions of images of the test set) is stored in the Results folder.
-Please dont't forget to [cite](#citing-this-work)!
+<br>Please dont't forget to [cite](#citing-this-work)!
