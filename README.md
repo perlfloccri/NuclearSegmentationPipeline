@@ -29,12 +29,13 @@ If you use the Nuclear Segmentation Pipeline in your research, please cite the f
 ```
 
 ## Setup
+Within this repository we provide a sample pipeline to utilize the U-Net architecture for nuclear image segmentation. The pipeline can be enhanced to work on other segmentation architectures as well,
+we will update the repository including Mask R-CNN for segmentation.
 The Nuclear Segmentation Pipeline was developed using a windows batch script. The batch script is necessary as we used multiple frameworks, each utilizing different python environments.
 Therefore, the python environments must be set using the requirement scripts provided. 
 The following three environments have to be set: 1. DataGenerator 2. pix2pix image translation 3. U-net architecture + lasagne wrapper for the U-net architecture
-We use multiple environments and link them using a batchscript, as we want to include any framework no matter of the required environment.
 After setting up the environments using the requirement files (DataGenerator\requirements.txt, UnetPure\requirements.txt, pix2pix-tensorflow-master\requirements.txt), 
-the path to the python environments and the local folders has to be set in the pipeline-batch-script (run_pipeline_unet.bat).
+the path to the python environments and the base path has to be set in the pipeline-batch-script (run_pipeline_unet.bat).
 Subsequently, the lasagne wrapper has to be built: change to the environment for the U-Net (UnetPure) and run these commands:
 ```
 python setup.py build
