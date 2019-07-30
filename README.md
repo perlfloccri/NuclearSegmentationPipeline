@@ -34,3 +34,5 @@ The Nuclear Segmentation Pipeline was developed using ....
 ```
 pip install -r requirements.txt
 ```
+
+Please dont't forget to [cite](#citing-this-work)!
