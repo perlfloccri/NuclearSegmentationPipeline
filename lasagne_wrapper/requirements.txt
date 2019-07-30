@@ -1,7 +1,0 @@
-setuptools==40.4.3
-Theano==0.9.0
-Lasagne==0.2.dev1
-matplotlib==2.2.3
-seaborn==0.7.0.dev0
-scipy==1.1.0
-numpy==1.15.4

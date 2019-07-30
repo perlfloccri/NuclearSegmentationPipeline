@@ -29,7 +29,9 @@ If you use the Nuclear Segmentation Pipeline in your research, please cite the f
 ```
 
 ## Setup
-The Nuclear Segmentation Pipeline was developed using ....
+The Nuclear Segmentation Pipeline was developed using a windows batch script. The batch script is necessary as we used multiple frameworks, each utilizing different python environments.
+Therefore, the python environments must be set using the requirement scripts provided. 
+The following three environments have to be set: 1. DataGenerator 2. pix2pix image translation 3. U-net architecture + lasagne wrapper for the U-net architecture
 
 ```
 pip install -r requirements.txt
