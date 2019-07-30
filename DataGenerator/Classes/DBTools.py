@@ -2,10 +2,10 @@ import mysql.connector
 
 class DBConnector:
 
-    host = "10.11.12.60"
-    user = "tisquant"
-    passwd = "tisquant"
-    db = 'tisquant'
+    host = ""
+    user = ""
+    passwd = ""
+    db = ''
     connection = 0
     cursor = 0
 

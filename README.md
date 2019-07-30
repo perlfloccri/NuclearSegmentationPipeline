@@ -42,4 +42,15 @@ python setup.py build
 python setup.py install
 ```
 
+As we run all scripts using a batch script, absolute pathes have to be set in the respective files: 
+Config/Config/Config.py: the config_path
+DataGenerator/Classes/Helper.py: the path to TileImages folder within the Config folder
+Results/evaluation.py: the path to the DataGenerator folder
+UnetPure/train.py, UnetPure/eval.py, UNetPure/utils/cell_data.py: the path to the Config folder
+UNetPure/models/unet1_augment.py: the path to the Config folder
+
+## Run 
+Within the DataGenerator folder, there is the folder dataset_train_val_test containing the dataset, separated into train, val and test. 
+Each of the folders contains a folder images and a folder masks, where raw images and annotations are stored (naming scheme is provided).
+
 Please dont't forget to [cite](#citing-this-work)!

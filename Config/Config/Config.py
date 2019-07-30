@@ -60,7 +60,7 @@ def main():
         e=1
     if (int(args.startup) == 0):
         print("Writing config...")
-        os.remove("E:\github_publication\Config\Config\config.json")
+        os.remove(settings.config_path)
         settings.writeValues(net_description=args.net_description,max_epochs=int(args.max_epochs),dataset=args.dataset,dataset_dirs_train=args.dataset_dirs_train,dataset_dirs_val=args.dataset_dirs_val,results_folder=args.results_folder,traintestmode=args.traintestmode,netinfo=args.netinfo,dataset_dirs_test=args.dataset_dirs_test,scaled=args.scaled,overlap_train=args.overlap_train,overlap_test=args.overlap_test)
     else:
         print("Startup mode")
