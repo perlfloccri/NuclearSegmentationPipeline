@@ -13,7 +13,7 @@ This work has been submitted to the IEEE for possible publication. Copyright may
 If you use the Nuclear Segmentation Pipeline in your research, please cite the following BibTeX entry:
 
 ```
-@article{eghbal2018deepsnp,
+@article{kromp2019,
     author={Kromp, Florian and Fischer, Lukas and Bozsaky, Eva and Ambros, Inge and Doerr, Wolfgang and Taschner-Mandl, Sabine and Ambros, Peter and Hanbury, Allen},
     title={Deep Learning architectures for generalized immunofluorescence based nuclear image segmentation},
     journal = {arXiv},
