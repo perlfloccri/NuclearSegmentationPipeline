@@ -67,4 +67,4 @@ Finally, the respective segmentation architecture is train and evaluated on thre
 - the natural image patches only
 <p>Resulting predictions are inferred on test set patches and reassembled to obtain original image sizes.
 They can be compared to groundtruth masks subsequently.
-<br><br>Please dont't forget to [cite](#citing-this-work)!
+<br><br>Please dont't forget to [cite]!
