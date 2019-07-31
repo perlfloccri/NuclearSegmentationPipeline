@@ -23,7 +23,7 @@ If you use the Nuclear Segmentation Pipeline in your research, please cite the f
     year = {2019},
     doi = {},
     note ={},
-    URL = {},
+    URL = {https://arxiv.org/abs/1907.12975v1},
     eprint = {}
 }
 ```
@@ -50,8 +50,21 @@ UnetPure/train.py, UnetPure/eval.py, UNetPure/utils/cell_data.py: the path to th
 UNetPure/models/unet1_augment.py: the path to the Config folder
 
 ## Run 
-Within the DataGenerator folder, there is the folder dataset_train_val_test containing the dataset, separated into train, val and test. 
+Within the DataGenerator folder, there is the folder dataset_train_val_test containing the dataset, with one subfolder for each diagnosis available.
+Within each diagnosis folder, there are four folders: train, val, train_and_val and test. The folder train_and_val contains all data of train + val.
 Each of the folders contains a folder images and a folder masks, where raw images and annotations are stored (naming scheme is provided).
 After putting your data there, you can run the batch script on a dos command line.
 At success, the output (predictions of images of the test set) is stored in the Results folder.
+
+## Pipeline
+The pipeline builds up upon multiple steps.
+First, all images of the respective folders (train, val, test) are split in overlapping tiles (patches).
+Then, a pix2pix architecture is trained on paired image patches (see description in the paper referenced above). The architecture learns to transform artifiically synthesized images into natural-like images.
+Next, artificial image patches are synthesized based on the train- and val-data and pix2pix is used to transform them into natural-like image patches.
+Finally, the respective segmentation architecture is train and evaluated on three conditions: 
+- the artificial image patches only
+- the artificial + natural image patches
+- the natural image patches only
+Resulting predictions are inferred on test set patches and reassembled to obtain original image sizes.
+They can be compared to groundtruth masks subsequently.
 <br>Please dont't forget to [cite](#citing-this-work)!
