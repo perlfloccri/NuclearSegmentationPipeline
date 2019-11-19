@@ -8,7 +8,7 @@ scikit_image==0.14.1
 tifffile==0.12.0
 Config==0.4.2
 Datahandling==3.3.0
-Pillow==6.1.0
+Pillow==6.2.0
 kaggle==1.5.4
 skimage==0.0
 setuptools==40.4.3
