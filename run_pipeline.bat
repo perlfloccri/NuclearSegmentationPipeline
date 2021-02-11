@@ -54,7 +54,7 @@ SET RESULTS_FILE_PATH=%PIPELINE_BASE_PATH%\Results\Results_%SCALE_TEXT%.csv
 :: Set path to the python environment and the code of the deep learning environment(s) to be evaluated
 @echo off
 setlocal enabledelayedexpansion
-set ARCHITECTURES=2
+set ARCHITECTURES=1 2
 
 SET ARCHITECTURENAME[1]=classicunet
 SET ARCHITECTURENAME[2]=maskrcnn

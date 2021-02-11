@@ -78,7 +78,7 @@ As we run all scripts using a batch script, absolute paths have to be set in the
 * [DeepLearningArchitectures/UNet/models/unet1_augment.py](DeepLearningArchitectures/Unet/models/unet1_augment.py): the path to the Config folder
 * [DeepLearningArchitectures/MaskRCNN/train.py](DeepLearningArchitectures/MaskRCNN/train.py), [DeepLearningArchitectures/MaskRCNN/test.py](DeepLearningArchitectures/MaskRCNN/test.py), 
 
-##Run 
+## Run 
 Within the [DataGenerator](DataGenerator) folder, there are two zip files (dataset_train_val_test.zip, dataset_singlecellgroundtruth.zip), extract them first (they contain a subsample of the dataset used to create the results for the publication, the entire dataset can be found [here](#dataset-used)). 
 Upon extraction, there are two folders, the folder dataset_train_val_test containing the dataset, with one subfolder for each diagnosis available (there can be different diagnosis between train and val vs. the test set) and
 the folder dataset_singlecellgroundtruth.
@@ -89,7 +89,7 @@ The same structure except for leaving out the train, val, train_and_val, and tes
 Now you can run the batch script on a windows command line.
 At success, the output (predictions of images of the test set) is stored in the [Results](Results) folder.
 
-##Pipeline to train and infer segmentation architectures
+## Pipeline to train and infer segmentation architectures
 The pipeline builds up upon multiple steps.
 0. Base Configuration: general variables and pathes are set
 	- DIAGNOSIS: diagnosis available for training and validation set (separated by blank)
