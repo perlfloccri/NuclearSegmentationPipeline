@@ -176,5 +176,7 @@ If actually two architectures are evaluated, add the third one like this:
 	SET ARCHITECTURE_NAMES[3]= CELLPOSE
 	SET PYTHON_PATH_ARCHITECTURE[3] = PATH_TO_CELLPOSE_PYTHON_ENVIRONMENT
 	SET CODE_PATH_ARCHITECTURE[3] = PATH_TO_CELLPOSE_CODE
+	SET TRAIN_SCRIPT[3] = PATH_SO_TRAIN_SCRIPT
+	SET EVAL_SCRIPT[3] = PATH_SO_INFERENCE_SCRIPT
 	
 If the architectures need the images in a specific format, the [DataHandling class in Config/Datahandling/Datasets.py](Config/Datahandling/Datasets.py) class must be adapted.
