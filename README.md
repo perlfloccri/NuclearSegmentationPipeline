@@ -61,9 +61,10 @@ The following environments have to be set in order to run the pipeline (if other
 3. U-net architecture + lasagne wrapper for the U-net architecture
 4. Mask R-CNN
 5. Result generation
+
 After setting up the environments, the path to the python environments, the code base and the base pipeline path have to be set in the pipeline-batch-script ([run_pipeline.bat](run_pipeline.bat)), see also the respective step in the [pipeline](#pipeline-to-train-and-infer-segmentation-architectures).
 
-Subsequently, the lasagne wrapper has to be built by activating the environment for the U-Net (UnetPure) and running these commands:
+Subsequently, the lasagne wrapper has to be built by activating the environment for the U-Net and running these commands:
 ```
 python setup.py build
 python setup.py install
@@ -76,7 +77,7 @@ As we run all scripts using a batch script, absolute paths have to be set in the
 * [Evaluation/evaluation_tmi_createsinglecellannotationresults.py](Evaluation/evaluation_tmi_createsinglecellannotationresults.py): the path to the DataGenerator folder, the path to the csv-file in the results folder (dependent on the setting in the [pipeline](run_pipeline.bat)), and the path to the annotation description csv-file [DataGenerator/image_description_final_revision.csv](DataGenerator/image_description_final_revision.csv)
 * [DeepLearningArchitectures/Unet/train.py](DeepLearningArchitectures/Unet/train.py), [DeepLearningArchitectures/Unet/eval.py](DeepLearningArchitectures/Unet/eval.py), [DeepLearningArchitectures/UNet/utils/cell_data.py](DeepLearningArchitectures/Unet/utils/cell_data.py): the path to the Config folder
 * [DeepLearningArchitectures/UNet/models/unet1_augment.py](DeepLearningArchitectures/Unet/models/unet1_augment.py): the path to the Config folder
-* [DeepLearningArchitectures/MaskRCNN/train.py](DeepLearningArchitectures/MaskRCNN/train.py), [DeepLearningArchitectures/MaskRCNN/test.py](DeepLearningArchitectures/MaskRCNN/test.py), 
+* [DeepLearningArchitectures/MaskRCNN/train.py](DeepLearningArchitectures/MaskRCNN/train.py), [DeepLearningArchitectures/MaskRCNN/test.py](DeepLearningArchitectures/MaskRCNN/test.py): the path to the Config folder 
 
 ## Run 
 Within the [DataGenerator](DataGenerator) folder, there are two zip files (dataset_train_val_test.zip, dataset_singlecellgroundtruth.zip), extract them first (they contain a subsample of the dataset used to create the results for the publication, the entire dataset can be found [here](#dataset-used)). 
@@ -91,6 +92,7 @@ At success, the output (predictions of images of the test set) is stored in the 
 
 ## Pipeline to train and infer segmentation architectures
 The pipeline builds up upon multiple steps.
+
 0. Base Configuration: general variables and pathes are set
 	- DIAGNOSIS: diagnosis available for training and validation set (separated by blank)
 	- DIAGNOSIS_TEST: diagnosis available for test set (separated by blank)
