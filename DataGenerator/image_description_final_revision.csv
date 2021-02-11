@@ -1,0 +1,4 @@
+Image_Name;Diagnosis;Preparation;Train-/Testset split;Testset class;Magnification;Modality;Device;Software;Mean BG signal;Mean FG signal;Signal/Noise;S/N Class;Challenge;Revised_complexity
+Ganglioneuroma_4;Ganglioneuroma;tissue section;test;GNB_I;20x;FM;Zeiss Axioplan II;Metafer;02.Mai;81.8;32.3;>=4.<40;high;high
+Neuroblastoma_12;Neuroblastoma;Tumor touch imprint;test;NB_IV;63x;FM;Zeiss Axioplan II;Metafer;09.Jän;98.8;10.Aug;>=4.<40;medium;medium
+normal_26;normal;cellline cytospin;test;NC_I;63x;FM;Zeiss Axioplan II;Metafer;37.5;141;03.Aug;<4;low-medium;low

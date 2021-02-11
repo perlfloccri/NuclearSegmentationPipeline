@@ -1,4 +1,3 @@
-from Classes.DBTools import TisQuantExtract
 from Classes.Config import Config
 from Classes.Helper import Tools
 from Classes.Image import AnnotatedImage,AnnotatedObjectSet, ArtificialAnnotatedImage
@@ -22,7 +21,6 @@ def main():
     parser.add_argument('--net', help='describe net', default=None)
     parser.add_argument('--overlap', help='select output folder', default=None)
     args = parser.parse_args()
-    tisquant = TisQuantExtract()
     config = Config
 
     if args.scale == '1':

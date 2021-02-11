@@ -22,11 +22,13 @@ import matplotlib.pyplot as plt
 import glob
 from scipy.ndimage.interpolation import map_coordinates
 from scipy.ndimage.filters import gaussian_filter
+from scipy import ndimage
 from PIL import Image,ImageEnhance
 import cv2
 import skimage
 from random import randint
 from skimage import transform as trf
+from skimage import feature, measure
 from random import uniform
 INPUT_SHAPE = [1,256,256]
 from skimage.measure import label
@@ -37,6 +39,7 @@ import PIL.Image as Image
 import scipy.fftpack as fp
 import math
 from skimage.morphology import disk, dilation
+from scipy.ndimage.morphology import binary_dilation
 
 class Tools:
 
@@ -97,6 +100,10 @@ class Tools:
         path_to_img = []
         scales_for_conv = []
         for i in range(0,annotated_nuclei.images.__len__()):
+            #im16 = annotated_nuclei.images[i].getRaw()
+            #ratio = np.amax(im16) / 256;
+            #img8 = (im16 / ratio).astype('uint8')
+            #images.append(img8)
             images.append(annotated_nuclei.images[i].getRaw())
             path_to_img.append(annotated_nuclei.path_to_imgs[i])
             scales_for_conv.append(scale)
@@ -369,6 +376,7 @@ class Tools:
         running_ind = 0
         for i in tqdm(range(nr_images)):
             if (rescale):
+                print(scales)
                 image = self.rescale_image(images[i],(scales[i],scales[i]))
             else:
                 image = images[i]
@@ -423,23 +431,28 @@ class Tools:
                         e=1
                     y_running = y_running + slicesize[0] - 2 * overlap
                 x_running = x_running + slicesize[1] - 2 * overlap
+            print("Finished reconstruction of all tiles")
             if (rescale):
                 img_to_save = self.upscale_image(img_to_save,(images[i].shape[0],images[i].shape[1]),config=config)
-                mask_to_save = self.upscale_mask(mask_to_save,(images[i].shape[0],images[i].shape[1]))
+                mask_to_save = self.upscale_mask_new(mask_to_save,(images[i].shape[0],images[i].shape[1]))
             img_to_return.append(img_to_save)
+            print ("Finished rescaling")
             if label_output:
                 #print("Label!!")
+                print("Labeling output ...")
                 mask_labeled = label(self.postprocess_mask(mask_to_save).astype(np.uint8))
                 if dilate_objects:
                     for i in np.unique(mask_labeled):
                         if i>0:
                             #print("Dilate object!")
                             tmp = mask_labeled == i
-                            tmp = dilation(tmp,disk(dilate_objects))
+                            tmp = dilation(tmp,disk(int(dilate_objects)))
                             mask_labeled[np.where(tmp>0)] = 0
                             mask_labeled += tmp*i
                 mask_to_return.append(mask_labeled)
+                print ("Labeling finished")
             else:
+                print("Postprocessing mask ...")
                 mask_tmp = self.postprocess_mask(mask_to_save)
                 if dilate_objects:
                     for i in np.unique(mask_labeled):
@@ -451,6 +464,7 @@ class Tools:
                 mask_to_return.append(mask_tmp)
             #mask_to_return.append(self.postprocess_mask(mask_to_save))
             del img_to_save
+            print("Postprocessing finished")
         return img_to_return, mask_to_return
 
     def postprocess_mask(self,mask,threshold=3):
@@ -459,7 +473,7 @@ class Tools:
             if i>0:
                 if ((mask==i).sum() < threshold):
                     mask[mask==i] = 0
-        return mask>0
+        return mask
 
     def rescale_mask(self, image, scale,make_labels=None):
         x_factor = int(image.shape[0] * 1 / (scale[0] / self.MEAN_NUCLEI_SIZE))
@@ -477,6 +491,18 @@ class Tools:
         im_new = np.zeros([scale[0], scale[1]], dtype=np.float32)
         for i in tqdm(range(1,image.max()+1)):
             im_new = im_new + (ski_transform.resize(image==i, (scale[0],scale[1]),mode='reflect')>0.5)
+        return im_new
+
+    def upscale_mask_new(self,image,scale):
+        image = scipy.ndimage.label(image)[0]
+        im_new = np.zeros([scale[0], scale[1]], dtype=np.float32)
+        edge_new = np.zeros([scale[0], scale[1]], dtype=np.float32)
+        running = 0
+        for i in tqdm(range(1,image.max()+1)):
+            running += 1
+            edge_new = edge_new + binary_dilation(ski_transform.resize(image==i, (scale[0],scale[1]),mode='reflect')>0.5,structure=ndimage.generate_binary_structure(2, 2))
+            im_new += ski_transform.resize(image==i, (scale[0],scale[1]),mode='reflect')>0.5
+        im_new[np.where(edge_new > 1)] = 0
         return im_new
 
     #def rescale_image(self,image,x_factor,y_factor):
@@ -689,9 +715,20 @@ class SVGTools:
         self.svg_str = self.svg_str + '\t<image xlink:href = "' + img_path + '" x = "0" y = "0" height = "' + str(self.height) + 'px" width = "' + str(self.width) + 'px" />'
         self.svg_str += "\n</g>\n"
 
-    def addMaskLayer(self,mask,name,color,opacity):
+    def addMaskLayer(self,mask,name,color,opacity,overrun=False):
         svg_str = ''
         contours = []
+        if overrun: # Mask was saved as 8-bit but more objects were included
+            mask_new = np.zeros(mask.shape).astype(np.uint16)
+            running = 1
+            for i in range(1,255):
+                mask_tmp = label(mask == i)
+                for t in np.unique(mask_tmp):
+                    if (t > 0) and ((mask_tmp == t).sum()>10):
+                        mask_new = mask_new * (~(mask_tmp == t))
+                        mask_new = mask_new + (mask_tmp == t) * running
+                        running = running + 1
+            mask = mask_new
         for i in range (1,mask.max()+1):
             if ((mask==i).sum() > 0):
                 contours.append(measure.find_contours(mask==i, 0.5))

@@ -684,3 +684,54 @@ class SampleInference(ArtificialNucleiDataset):
         for i in self.ids:
             self.add_image("ArtificialNuclei", image_id=i, path=None, width=width, height=height)
         return ids
+
+class DataLoading:
+    def load(self,phase='train'):
+        # Load settings
+        settings = UNETSettings()
+        # Load Dataset
+        print("Load dataset ...")
+        if UNETSettings().network_info["dataset"] == 'tisquant':
+            dataset = TisquantDatasetNew()
+            # dataset = TisquantDataset()
+        elif UNETSettings().network_info["dataset"] == 'artificialNuclei':
+            dataset = ArtificialNucleiDataset()
+        elif UNETSettings().network_info["dataset"] == 'artificialNucleiNotConverted':
+            dataset = ArtificialNucleiDatasetNotConverted()
+        elif UNETSettings().network_info["dataset"] == 'mergeTisquantArtificialNotConverted':
+            datasets = []
+            dataset1 = TisquantDatasetNew()
+            dataset1.load_data(mode=1)
+            dataset2 = ArtificialNucleiDatasetNotConverted()
+            dataset2.load_data(mode=1)
+            datasets.append(dataset1)
+            datasets.append(dataset2)
+            dataset = MergedDataset(datasets)
+        elif UNETSettings().network_info["dataset"] == 'mergeTisquantArtificial':
+            datasets = []
+            dataset1 = TisquantDatasetNew()
+            dataset1.load_data(mode=1)
+            dataset2 = ArtificialNucleiDataset()
+            dataset2.load_data(mode=1)
+            datasets.append(dataset1)
+            datasets.append(dataset2)
+            dataset = MergedDataset(datasets)
+        else:
+            print('Dataset not valid')
+            sys.exit("Error")
+
+        # Load Dataset
+        if phase == 'train':
+            dataset.load_data(mode=1)
+        else:
+            dataset.load_data(mode=2)
+        dataset.prepare()
+        return dataset
+
+    def getID(self):
+        settings = UNETSettings()
+        return settings.network_info["net_description"]
+
+    def getResultsPath(self):
+        settings = UNETSettings()
+        return settings.network_info["results_folder"]

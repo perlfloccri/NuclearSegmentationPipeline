@@ -5,7 +5,7 @@ class DBConnector:
     host = ""
     user = ""
     passwd = ""
-    db = ''
+    db = ""
     connection = 0
     cursor = 0
 

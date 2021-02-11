@@ -33,7 +33,7 @@ class Image:
 
     raw = 0
 
-    def pre_process_img(img, color='gray'):
+    def pre_process_img(img, color='gray',mask=False):
         if color is 'gray':
             try:
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -44,9 +44,18 @@ class Image:
         else:
             pass
 
-        img = img.astype(np.float32)
-        img /= 255.0
-        return img
+        if mask:
+            return img
+        else:
+            if img.dtype == 'uint16':
+                img = img / 65536.0
+            else:
+                if (img.max() > 255.0):
+                    img = img / img.max()
+                else:
+                    img = img / 255.0
+            img = img.astype(np.float32)
+            return img
 
     def getRaw(self):
         return self.raw
@@ -55,12 +64,18 @@ class AnnotatedImage(Image):
 
     mask = 0
 
-    def readFromPath(self,image_path,mask_path,type=None):
+    def readFromPath(self,image_path,mask_path,type=None,mask_available=True):
         self.raw = Image.pre_process_img(imread(image_path),color='gray')
-        if type=='uint16':
-            self.mask = imread(mask_path).astype(np.uint16)
+        if mask_available:
+            if type=='uint16':
+                self.mask = imread(mask_path).astype(np.uint16)
+            else:
+                self.mask = imread(mask_path).astype(np.uint8)
         else:
-            self.mask = imread(mask_path).astype(np.uint8)
+            if type == 'uint16':
+                self.mask = np.zeros((self.raw.shape[0],self.raw.shape[1])).astype(np.uint16)
+            else:
+                self.mask = np.zeros((self.raw.shape[0],self.raw.shape[1])).astype(np.uint8)
     def createWithArguments(self,image,mask):
         self.raw = image
         self.mask = mask
@@ -161,7 +176,7 @@ class ArtificialAnnotatedImage(AnnotatedImage):
         rand_x = random.randint(pos.minx,pos.maxx)
         rand_y = random.randint(pos.miny,pos.maxy)
         #[x, y] = np.where(image.getMask() == 1)
-        tmp_image = image.getRaw()
+        tmp_image = image.getRaw().astype(np.float32)
         tmp_mask = image.getMask()
         eroded_mask = morphology.binary_erosion(tmp_mask.astype(bool), structure=np.ones((3, 3), dtype=np.int))
         tmp_image = tmp_image * eroded_mask
@@ -172,6 +187,7 @@ class ArtificialAnnotatedImage(AnnotatedImage):
 
         added = 0
         visible = random.randint(0, 1)
+
         for i in range(0,x.__len__()):
             try:
                 if (((x[i] + rand_x) > 0 ) & ((y[i] + rand_y) > 0 )):

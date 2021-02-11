@@ -1,4 +1,3 @@
-from Classes.DBTools import TisQuantExtract
 from Classes.Config import Config
 from Classes.Helper import Tools
 from Classes.Image import AnnotatedImage,AnnotatedObjectSet, ArtificialAnnotatedImage
@@ -29,7 +28,6 @@ def main():
     parser.add_argument('--mask_prefix', help='select output folder', default='Mask_')
     #random.seed(13431)
     args = parser.parse_args()
-    tisquant = TisQuantExtract()
     config = Config
     if args.tissue:
         config.diagnosis = [args.tissue]
@@ -55,17 +53,11 @@ def main():
 
     annotated_nuclei =[]
     annotated_images = []
-    #ids_paths = tisquant.dbconnector.execute(query=tisquant.getLevel3AnnotatedImagesByDiagnosis_Query(diagnosis = config.diagnosis,magnification = config.magnification, staining_type = config.staining_type, staining = config.staining, segmentation_function = config.segmentation_function, annotator = config.annotator, device = config.device))
     ids_images = glob.glob(os.path.join(args.inputFolder,config.diagnosis[0],'images','*.tif'))
     ids_masks = glob.glob(os.path.join(args.inputFolder, config.diagnosis[0], 'masks', '*.tif'))
 
-    #for index,elem in enumerate(ids_paths):
     for index, elem in enumerate(ids_images):
-        #groundtruth_paths = tisquant.dbconnector.execute(tisquant.getLevel3AnnotationByImageId_Query(elem[0],config.annotator))
-        #groundtruth_paths = tisquant.dbconnector.execute(tisquant.getLevel3AnnotationByImageIdUsingMaxExperience_Query(elem[0], config.annotator))
-        #for groundtruth_path in groundtruth_paths:
         test = AnnotatedImage()
-        #    test.readFromPath(tools.getLocalDataPath(elem[1],1),tools.getLocalDataPath(groundtruth_path[0],3))
         test.readFromPath(ids_images[index], ids_masks[index],type='uint16')
         annotated_images.append(test)
 
@@ -117,14 +109,6 @@ def main():
         if (total_added > 0):
             shape_y = img.getRaw().shape[0]
             shape_x = img.getRaw().shape[1]
-            #borders = cv2.dilate((cv2.Laplacian(img.tmp_mask,cv2.CV_64F)>0).astype(np.uint16), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
-            #original_raw = img.getRaw()
-            #img.filterLowFrequencies(n=n_freq)
-            #pixels_to_change = np.where(borders>0)
-            #original_raw_new = np.copy(original_raw)
-            #original_raw_new[pixels_to_change] = img.getRaw()[pixels_to_change]
-            #if not (args.tissue == 'Ganglioneuroma'):
-            #    img.raw = original_raw_new.astype(img.raw.dtype)
             img_new = np.zeros((shape_y,shape_x*2,3),dtype=np.float32)
             img_new[:,0:shape_x,0] = img_new[:,0:shape_x,1] = img_new[:,0:shape_x,2] = img_new[:,shape_x:2*shape_x,0] = img_new[:,shape_x:2*shape_x,1] = img_new[:,shape_x:2*shape_x,2] = img.getRaw()
             scipy.misc.toimage(img_new, cmin=0.0, cmax=1.0).save(config.outputFolder + config.diagnosis[0] + '\\images\\' + args.img_prefix + str(t) + '.jpg')

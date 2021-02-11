@@ -1,0 +1,149 @@
+﻿Der Buildvorgang wurde am 06.10.2016 15:51:14 gestartet.
+     1>Projekt "C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\ARGraphs_Mex.vcxproj" auf Knoten "2", Rebuild Ziel(e).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files\MATLAB\R2013b\extern\include" /Zi /nologo /W3 /WX- /O2 /GL /D MATLAB_MEX_FILE /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc110.pdb" /Gd /TC /errorReport:prompt imageProcessing.c linear.c matrix.c src\ARGraphMex.c src\cellCandidates.c src\markerDefinition.c src\primitiveOperations.c src\sobelPrimitives.c src\sobelTasks.c src\watershed.c util.c
+         imageProcessing.c
+     1>imageProcessing.c(1217): warning C4244: '=': Konvertierung von 'double' in 'int', möglicher Datenverlust
+         linear.c
+         matrix.c
+     1>matrix.c(102): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(107): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(111): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(119): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(124): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(128): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(134): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(142): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(148): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(151): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(159): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(164): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(168): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>matrix.c(237): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>matrix.c(248): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>matrix.c(267): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(271): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>matrix.c(282): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(286): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>matrix.c(296): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(309): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>matrix.c(322): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+         ARGraphMex.c
+     1>src\ARGraphMex.c(61): warning C4267: '=': Konvertierung von 'size_t' nach 'int', Datenverlust möglich
+     1>src\ARGraphMex.c(80): warning C4267: '=': Konvertierung von 'size_t' nach 'int', Datenverlust möglich
+         cellCandidates.c
+     1>src\cellCandidates.c(13): warning C4101: 'i': Unreferenzierte lokale Variable
+     1>src\cellCandidates.c(836): warning C4244: 'Funktion': Konvertierung von 'double' in 'int', möglicher Datenverlust
+     1>src\cellCandidates.c(837): warning C4244: 'Funktion': Konvertierung von 'double' in 'int', möglicher Datenverlust
+     1>src\cellCandidates.c(777): warning C4101: 'tmp': Unreferenzierte lokale Variable
+         markerDefinition.c
+     1>src\markerDefinition.c(56): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(59): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(65): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(71): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(74): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(77): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(80): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\markerDefinition.c(147): warning C4101: 'str': Unreferenzierte lokale Variable
+         primitiveOperations.c
+         sobelPrimitives.c
+     1>src\sobelPrimitives.c(142): warning C4101: 'cno': Unreferenzierte lokale Variable
+     1>src\sobelPrimitives.c(300): warning C4101: 'fnd': Unreferenzierte lokale Variable
+     1>src\sobelPrimitives.c(369): warning C4101: 'i4': Unreferenzierte lokale Variable
+         sobelTasks.c
+     1>src\sobelTasks.c(25): warning C4101: 'temp': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(25): warning C4101: 'j': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(41): warning C4101: 'i': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(41): warning C4101: 'j': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(60): warning C4101: 'p2': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(60): warning C4101: 'p1': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(82): warning C4101: 'p2': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(82): warning C4101: 'p1': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(104): warning C4101: 'p2': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(104): warning C4101: 'p1': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(126): warning C4101: 'p2': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(126): warning C4101: 'p1': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(149): warning C4101: 'p2': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(149): warning C4101: 'p1': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(172): warning C4101: 'p2': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(172): warning C4101: 'p1': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(263): warning C4101: 'temp': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(261): warning C4101: 'j': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(462): warning C4244: '*=': Konvertierung von 'double' in 'int', möglicher Datenverlust
+     1>src\sobelTasks.c(389): warning C4101: 'temp': Unreferenzierte lokale Variable
+     1>src\sobelTasks.c(399): warning C4101: 'j': Unreferenzierte lokale Variable
+         watershed.c
+     1>src\watershed.c(17): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\watershed.c(18): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\watershed.c(19): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+     1>src\watershed.c(20): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357): Siehe Deklaration von 'sprintf'
+         util.c
+     1>util.c(22): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>util.c(25): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>util.c(28): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(237): Siehe Deklaration von 'fscanf'
+     1>util.c(35): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>util.c(43): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218): Siehe Deklaration von 'fopen'
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(1137,5): warning MSB8012: TargetPath(C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex.mexw64) does not match the Linker's OutputFile property value (C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex_NEU.mexw64). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(1139,5): warning MSB8012: TargetName(ARGraphs_Mex) does not match the Linker's OutputFile property value (ARGraphs_Mex_NEU). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex_NEU.mexw64" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\MATLAB\R2013b\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex.lib" /MACHINE:X64 /export:mexFunction /DLL x64\Release\imageProcessing.obj
+         x64\Release\linear.obj
+         x64\Release\matrix.obj
+         x64\Release\ARGraphMex.obj
+         x64\Release\cellCandidates.obj
+         x64\Release\markerDefinition.obj
+         x64\Release\primitiveOperations.obj
+         x64\Release\sobelPrimitives.obj
+         x64\Release\sobelTasks.obj
+         x64\Release\watershed.obj
+         x64\Release\util.obj
+     1>LINK : warning LNK4075: /INCREMENTAL wird aufgrund der Angabe von /LTCG ignoriert.
+            Bibliothek "C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex.lib" und Objekt "C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex.exp" werden erstellt.
+         Code wird generiert.
+         Codegenerierung ist abgeschlossen.
+         ARGraphs_Mex.vcxproj -> C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\x64\Release\ARGraphs_Mex.mexw64
+     1>Die Erstellung des Projekts "C:\Users\flo\Desktop\nucleusanalyzer\Diplomarbeit\Matlab\ARGraphs\ARGraphs_Mex.vcxproj" ist abgeschlossen, Rebuild Ziel(e).
+
+Build erfolgreich.
+
+Verstrichene Zeit 00:00:02.25

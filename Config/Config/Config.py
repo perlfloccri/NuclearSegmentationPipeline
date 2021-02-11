@@ -3,7 +3,7 @@ import argparse
 import os
 
 class UNETSettings:
-    config_path = r'E:\github_publication\Config\Config\config.json'
+    config_path = r'E:\NuclearSegmentationPipeline\Config\Config\config.json'
 
     network_info = {
         "max_epochs": 400,
@@ -57,12 +57,8 @@ def main():
 
         args = parser.parse_args()
     except:
-        e=1
-    if (int(args.startup) == 0):
-        print("Writing config...")
-        os.remove(settings.config_path)
-        settings.writeValues(net_description=args.net_description,max_epochs=int(args.max_epochs),dataset=args.dataset,dataset_dirs_train=args.dataset_dirs_train,dataset_dirs_val=args.dataset_dirs_val,results_folder=args.results_folder,traintestmode=args.traintestmode,netinfo=args.netinfo,dataset_dirs_test=args.dataset_dirs_test,scaled=args.scaled,overlap_train=args.overlap_train,overlap_test=args.overlap_test)
-    else:
-        print("Startup mode")
-        print(args.startup)
-main()
+        None
+    settings.writeValues(net_description=args.net_description,max_epochs=int(args.max_epochs),dataset=args.dataset,dataset_dirs_train=args.dataset_dirs_train,dataset_dirs_val=args.dataset_dirs_val,results_folder=args.results_folder,traintestmode=args.traintestmode,netinfo=args.netinfo,dataset_dirs_test=args.dataset_dirs_test,scaled=args.scaled,overlap_train=args.overlap_train,overlap_test=args.overlap_test)
+
+if __name__ == '__main__':
+    main()

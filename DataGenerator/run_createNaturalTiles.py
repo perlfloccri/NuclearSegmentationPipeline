@@ -1,4 +1,3 @@
-from Classes.DBTools import TisQuantExtract
 from Classes.Config import Config
 from Classes.Helper import Tools
 from Classes.Image import AnnotatedImage,AnnotatedObjectSet, ArtificialAnnotatedImage
@@ -17,7 +16,6 @@ def main():
     parser.add_argument('--resultsfile', help='select output folder', default=None)
     parser.add_argument('--overlap', help='select output folder', default=None)
     args = parser.parse_args()
-    tisquant = TisQuantExtract()
     config = Config
     if args.tissue:
         config.diagnosis = [args.tissue]
