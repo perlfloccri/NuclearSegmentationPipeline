@@ -18,7 +18,7 @@ If you use the Nuclear Segmentation Pipeline in your research, please cite the f
     volume = {},
     number = {},
     pages = {},
-    year = {2020},
+    year = {2019},
     doi = {},
     note ={},
     URL = {https://arxiv.org/abs/1907.12975v1},
