@@ -42,15 +42,15 @@ The dataset can be accessed [here](https://identifiers.org/biostudies:S-BSST265)
 ## Architectures evaluated in the paper
 
 ### Deep Learning
-*U-Net: the code is available within this repository: [DeepLearningArchitectures/UNet](DeepLearningArchitectures/UNet)
-*U-Net ResNet: the code is available at https://github.com/qubvel/segmentation_models
-*Mask R-CNN: the code is available at https://github.com/matterport/Mask_RCNN
-*KG Instance segmentation: the code is available at https://github.com/yijingru/KG_Instance_Segmentation
-*Cellpose: the code is available at https://github.com/mouseland/cellpose
+* U-Net: the code is available within this repository: [DeepLearningArchitectures/UNet](DeepLearningArchitectures/UNet)
+* U-Net ResNet: the code is available at https://github.com/qubvel/segmentation_models
+* Mask R-CNN: the code is available at https://github.com/matterport/Mask_RCNN
+* KG Instance segmentation: the code is available at https://github.com/yijingru/KG_Instance_Segmentation
+* Cellpose: the code is available at https://github.com/mouseland/cellpose
 
 ### Conventional Methods
-*Attributed relational graphs: the code is available at https://github.com/sarslancs/argraphs and in the folder [ConventionalMethods/argraphs](ConventionalMethods/argraphs), where you can also find the code for parameter coarse- and finetuning
-*Iterative h-min: the code is available at https://github.com/canfkoyuncu/IterativeHMinima and in the folder [ConventionalMethods/iterativehmin](ConventionalMethods/iterativehmin), where you can also find the code for parameter coarse- and finetuning
+* Attributed relational graphs: the code is available at https://github.com/sarslancs/argraphs and in the folder [ConventionalMethods/argraphs](ConventionalMethods/argraphs), where you can also find the code for parameter coarse- and finetuning
+* Iterative h-min: the code is available at https://github.com/canfkoyuncu/IterativeHMinima and in the folder [ConventionalMethods/iterativehmin](ConventionalMethods/iterativehmin), where you can also find the code for parameter coarse- and finetuning
 
 ## Setup the pipeline using U-Net and Mask R-CNN
 Within this repository we provide a sample pipeline to utilize the U-Net and the Mask R-CNN architectures for nuclear image segmentation. The pipeline can be enhanced to work on other segmentation architectures as well,
