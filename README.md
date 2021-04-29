@@ -2,27 +2,24 @@
 
 This repository contains the code for the paper
 
-**Evaluation of Deep Learning architectures for complex immunofluorescence nuclear image segmentation**
+**[Evaluation of Deep Learning architectures for complex immunofluorescence nuclear image segmentation](https://doi.org/10.1109/TMI.2021.3069558)**
 <br>
-[Florian Kromp](http://science.ccri.at/contact-us/contact-details/), [Lukas Fischer](https://www.scch.at/en/team/person_id/207), [Eva Bozsaky](http://science.ccri.at/contact-us/contact-details/), [Inge Ambros](http://science.ccri.at/contact-us/contact-details/), Wolfgang Doerr, Klaus Beiske, [Peter Ambros](http://science.ccri.at/contact-us/contact-details/), [Sabine Taschner-Mandl](http://science.ccri.at/contact-us/contact-details/) and [Allan Hanbury](http://allan.hanbury.eu/doku.php)
+[Florian Kromp](http://science.ccri.at/contact-us/contact-details/), [Lukas Fischer](https://www.scch.at/teammitglied/lukasfischer.html), [Eva Bozsaky](http://science.ccri.at/contact-us/contact-details/), [Inge Ambros](http://science.ccri.at/contact-us/contact-details/), Wolfgang Doerr, Klaus Beiske, [Peter Ambros](http://science.ccri.at/contact-us/contact-details/), [Sabine Taschner-Mandl](http://science.ccri.at/contact-us/contact-details/) and [Allan Hanbury](http://allan.hanbury.eu/doku.php)
 
 ## Citing this work
 
-If you use the Nuclear Segmentation Pipeline in your research, please cite the following BibTeX entry:
+If you use the Nuclear Segmentation Pipeline in your research, please cite our papers using the following BibTeX entries:
 
 ```
-@article{Kromp2019,
-    author={Kromp, Florian and Fischer, Lukas and Bozsaky, Eva and Ambros, Inge and Doerr, Wolfgang and Beiske, Klaus and Ambros, Peter, and Taschner-Mandl, Sabine and Hanbury, Allan},
-    title={Evaluation of Deep Learning architectures for complex immunofluorescence nuclear image segmentation},
-    journal = {arXiv},
-    volume = {},
-    number = {},
-    pages = {},
-    year = {2019},
-    doi = {},
-    note ={},
-    URL = {https://arxiv.org/abs/1907.12975v1},
-    eprint = {}
+@ARTICLE{Kromp2021,
+  author={Kromp, Florian and Fischer, Lukas and Bozsaky, Eva and Ambros, Inge M. and Dörr, Wolfgang and Beiske, Klaus and Ambros, Peter F. and Hanbury, Allan and Taschner-Mandl, Sabine},
+  journal={IEEE Transactions on Medical Imaging}, 
+  title={Evaluation of Deep Learning architectures for complex immunofluorescence nuclear image segmentation}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TMI.2021.3069558}
 }
 ```
 ## Dataset used
