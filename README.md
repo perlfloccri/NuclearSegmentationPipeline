@@ -25,14 +25,14 @@ If you use the Nuclear Segmentation Pipeline in your research, please cite our p
 ## Dataset used
 ```
 @article{Kromp2020,
-author = {Kromp, Florian and Bozsaky, Eva and Rifatbegovic, Fikret and Fischer, Lukas and Ambros, Magdalena and Berneder, Maria and Weiss, Tamara and Lazic, Daria and Doerr, Wolfgang and Hanbury, Allan and Beiske, Klaus and Ambros, Peter F. and Ambros, Inge M. and Taschner-Mandl, Sabine},
-doi = {10.1038/s41597-020-00608-w},
-journal = {Nature Scientific Data},
-number = {262},
-pages = {1--8},
-title = {An annotated fluorescence image dataset for training nuclear segmentation methods},
-volume = {7},
-year = {2020}
+  author = {Kromp, Florian and Bozsaky, Eva and Rifatbegovic, Fikret and Fischer, Lukas and Ambros, Magdalena and Berneder, Maria and Weiss, Tamara and Lazic, Daria and Doerr, Wolfgang and Hanbury, Allan and Beiske, Klaus and Ambros, Peter F. and Ambros, Inge M. and Taschner-Mandl, Sabine},
+  doi = {10.1038/s41597-020-00608-w},
+  journal = {Nature Scientific Data},
+  number = {262},
+  pages = {1--8},
+  title = {An annotated fluorescence image dataset for training nuclear segmentation methods},
+  volume = {7},
+  year = {2020}
 }
 ```
 The dataset can be accessed [here](https://identifiers.org/biostudies:S-BSST265).
