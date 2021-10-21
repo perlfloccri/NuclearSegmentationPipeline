@@ -8,7 +8,7 @@ astropy==4.0.1.post1
 atomicwrites @ file:///home/conda/feedstock_root/build_artifacts/atomicwrites_1588182545583/work
 attrs==19.3.0
 autopep8==1.5.2
-Babel==2.8.0
+Babel==2.9.1
 backcall==0.1.0
 backports.shutil-get-terminal-size==1.0.0
 bcrypt==3.1.7
