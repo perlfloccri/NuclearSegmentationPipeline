@@ -131,7 +131,7 @@ ply==3.11
 prometheus-client==0.7.1
 prompt-toolkit==3.0.5
 psutil==5.7.0
-py==1.8.1
+py==1.10.0
 pycodestyle==2.5.0
 pycosat==0.6.3
 pycparser==2.20
